@@ -19,7 +19,7 @@ function wp_redis_get_site() {
     
     if ( empty( $sites[ $site ] ) ) {
         $sites[ $site ] = ! empty( $sites ) ? max( $sites ) + 1 : 10;
-        $json = json_encode( $sites );
+        $json = json_encode( $sites, JSON_PRETTY_PRINT );
         file_put_contents( $site_file, $json );
     }
 
